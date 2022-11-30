@@ -18,6 +18,8 @@ function generatePassword() {
   
   //user input of password length
   input = parseInt(prompt("How many characters would you like your password to be? It can be 8-128 characters."));
+
+  //if/else prompts for using certin characters
   if (!input) {
     alert("You need to choose a number between 8 and 128");
   } else if (input < 8 || input > 128) {
@@ -29,33 +31,16 @@ function generatePassword() {
     numbers = confirm("Would you like to use numbers?");
   }
 
+  //else if for possible choices
 
+  if (!upletters && !lowercase && !special && !numbers) {
+    choices = alert("You must choose at least 1 option. HINT! The strongest passwords use them all");
+  }else if(upletters && lowercase && special && numbers) {
+    choices = character.concat(upLetters, lowercase, special, numbers);
+  }
 
   
-   if (isUpletters) {
-    console.log("uppercase");
-  } else {
-    var characters = characters - upLetters
-  }
-
-  if (isLowercase) {
-    console.log("lowercase");
-  } else {
-    var characters = characters - lowercase
-
-  }
   
-  if (isSpecial) {
-    console.log("special");
-  } else {
-    var characters = characters - special
-  }
-
-  if (isNumbers) {
-    console.log("number");
-  } else {
-    var characters = characters - numbers
-  }
 
   for (var i = 0; i <= passLength; i++) {
     var input = passLength
