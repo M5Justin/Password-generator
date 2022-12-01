@@ -86,11 +86,8 @@ var randomPass = [];
   //for statement
   for (var i = 0; i < input; i++) {
     randomPass = randomPass + choices[Math.floor(Math.random() * choices.length)];
-   
-
     console.log(randomPass)
   }
-  
   
     UserInput(randomPass);
     return randomPass;
